@@ -1,8 +1,9 @@
 ### Homework 7
+
 Due Wed. Sept.2
 ---
 
-**Memory Game**
+###Memory Game
 
 This week you'll be writing an interactive browser game of Memory, in which some set of cards are arranged face down on a board and a player turns them over looking for pairs. 
 
