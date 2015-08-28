@@ -1,7 +1,6 @@
 ### Homework 7
 
 Due Wed. Sept.2
----
 
 ###Memory Game
 
