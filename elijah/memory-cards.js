@@ -2,8 +2,8 @@
 var MemoryCards = (function() {
     function Ctor() {
         // a list of cards
-        var cards = ['kraken', 'squid', 'whale', 'dolphin', 'shark', 'jellyfish',
-                    'puffer', 'sunfish', 'eel', 'swordfish', 'tuna', 'urchin'];
+        var cards = ['kraken', 'squid', 'whale', 'octopus', 'shark', 'jellyfish',
+                    'narwhal', 'serpent', 'cthulhu', 'diver', 'dino', 'anchor'];
 
         this.values = function() {
             // return a copy of cards, doubled for game
@@ -16,7 +16,8 @@ var MemoryCards = (function() {
         }
 
         this.display = function(val) {
-            return val;
+            // return an img tag for card front
+            return '<img src="images/' + val + '.jpg" width="113" height="168">';
         }
     }
     

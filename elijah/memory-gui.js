@@ -1,20 +1,27 @@
 var MemoryGUI = (function () {
     function GuiCtor(container,game) {
         game.gui(this);
-        // XXX no validation
+        // who needs validation?
         var container = document.getElementById('memorygame');
         // score counter
         var score = 0;
+        // img url for card back
+        // XXX may choose sizing again later, after style
+        //  have to match css sizing with this
+        // small
+        //var back = '<img src="images/card_back.jpg" width="75" height="112">';
+        // large
+        var back = '<img src="images/card_back.jpg" width="113" height="168">';
+
         // methods
         this.reset = function() {
-            // reset cards
+            // reset game
             game.reset();
             // grab the tds and reset the background
             var tds = document.getElementsByTagName('td');
             for (var i = 0; i < tds.length; i++) {
-                tds[i].setAttribute('class', 'green');
                 // 'erase' the image if reset is pressed to quickly
-                tds[i].innerHTML = '';
+                tds[i].innerHTML = back;
             }
             // reset score counter
             score = 0;
@@ -29,6 +36,7 @@ var MemoryGUI = (function () {
                 whereArr.forEach(function(n) {
                     var card = document.getElementById(n);
                     card.innerHTML = '';
+                    // white out card after matched
                     card.setAttribute('class', 'white');
                 });
             }, 1000);
@@ -37,7 +45,7 @@ var MemoryGUI = (function () {
             // hide after short timeout
              setTimeout(function() {
                 whereArr.forEach(function(n) {
-                    document.getElementById(n).innerHTML = '';
+                    document.getElementById(n).innerHTML = back;
                 });
             }, 1000);
         }
@@ -50,6 +58,7 @@ var MemoryGUI = (function () {
             for (c = 0; c < 6; c++) {
                 var newCell = row.insertCell(c);
                 newCell.setAttribute('id', (sqId));
+                newCell.innerHTML = back;
                 newCell.addEventListener('click', function(event) {
                     var id = this.getAttribute('id');
                     game.lift(parseInt(id));

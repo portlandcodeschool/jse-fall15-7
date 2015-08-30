@@ -1,13 +1,6 @@
-/* Whatever CSS you want for GUI...*/
-
-#memorygame {
-	
-}
-
 table tr td {
-    width: 70px;
-    height: 70px;
-    background: lightgreen;
+    width: 113px;
+    height: 168px;
     border: 1px solid lightgrey;
 }
 
