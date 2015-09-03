@@ -21,7 +21,6 @@ var MemoryGUI = (function() {
     };
 
     this.render = function() {
-      console.log('render');
       container.innerHTML = '';
 
       var numRows = 2;
@@ -55,7 +54,6 @@ var MemoryGUI = (function() {
     // public instance methods
     // (you may instead attach these to a prototype if you prefer)
     this.reset = function() {
-      console.log('reset');
       game.reset();
       game.gui().render();
 
