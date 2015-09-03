@@ -6,11 +6,7 @@ function go() {
     game = new MemoryGame(cards),
     gui = new MemoryGUI('memorygame', game); //'memorygame' is the id of div where gui should be inserted'
 
-  var resetButton = document.createElement('button');
-  resetButton.innerHTML = 'S T A R T / R E S T A R T';
-  resetButton.classList.add('resetButton');
-  resetButton.addEventListener('click', gui.reset);
-  document.getElementById('memorygame').appendChild(resetButton);
+
 }
 
 window.addEventListener("load", go);
