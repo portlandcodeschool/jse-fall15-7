@@ -1,6 +1,42 @@
 /* Whatever CSS you want for GUI...*/
 
 #memorygame {
-	/* ... */
+  /* ... */
 }
+
+td {
+  table-layout: fixed;
+  background-color: pink;
+  text-align: center;
+  width: 150px;
+  height: 200px;
+  border: 20px red;
+  table-layout: fixed;
+}
+
+.face-up {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background-color: pink;
+}
+
+.faceDown {
+  background-image: url(SevenWondersOfTheWorld.png);
+  background-size: 144px 200px;
+}
+
+.removed {
+  background: white;
+}
+
+.matched {
+  visibility: hidden;
+}
+
+.resetButton {
+  background: pink;
+  font-size: 14px;
+}
+
 
