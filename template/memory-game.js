@@ -1,8 +1,6 @@
-// This module is completely finished!  You just need to understand how it works, then integrate it.
-
 var MemoryGame = (function() {
 
-	function Ctor(cardset) {
+	function GameCtor(cardset) {
 		var slots, //values of shuffled cards;
 				//sparse array: will have elements deleted as cards are removed
 			length,//total slots, including gaps
@@ -20,8 +18,9 @@ var MemoryGame = (function() {
 		reset();// reset now as part of init'ing
 
 		var gui = function() {//accessor fn
-			if (arguments.length === 0) 
+			if (arguments.length === 0) {
 				return _gui; //getter
+      }
 			_gui = arguments[0]; //setter
 		}
 
@@ -30,7 +29,7 @@ var MemoryGame = (function() {
 		}
 
 		var remainsAt = function(where) {//--> boolean
-			return slots[where]!==undefined;
+			return slots[where] !== undefined;
 		}
 		var valueAt = function(where) {//--> card val
 			return slots[where];
@@ -49,9 +48,9 @@ var MemoryGame = (function() {
 		}
 
 		var lift = function(here) {//--> display string
-			if (!isValid(here,length)) return false;
-			if (!remainsAt(here)) return false;
-			if (there===here) return false;
+			if (!isValid(here,length)) { return false; }
+			if (!remainsAt(here)) { return false; }
+			if (there===here) { return false; }
 
 			// must be a face-down card here; proceed...
 			var valHere = valueAt(here),
@@ -65,20 +64,23 @@ var MemoryGame = (function() {
 					// match; remove both:
 					removeAt(here);
 					removeAt(there);
-					if (_gui)
+					if (_gui) {
 						_gui.removeSoon([here,there]);
+          }
 					//optional: report match
 					console.log("Match!")
 				} else {
-					if (_gui)
+					if (_gui) {
 						_gui.hideSoon([here,there]);
+          }
 				}
 				//either way, turn face-up to face-down:
 				there = false;
 			}
-			if (_gui)
+			if (_gui) {
 				_gui.show(here,displayHere);
-			return displayHere; 
+      }
+			return displayHere;
 		}
 
 		// Make some functions public as instance methods:
@@ -95,11 +97,11 @@ var MemoryGame = (function() {
 	// these could be placed inside ctor,
 	// but then they would be rebuilt for each instance
 	function isValid(where,length) {
-			return (typeof where === 'number')
-				&& (where%1 === 0)
-				&& (where>=0)
-				&& (where<length)
-		}
+		return (typeof where === 'number')
+			&& (where%1 === 0)
+			&& (where>=0)
+			&& (where<length)
+	}
 
 	function shuffle(array) {
 	// Knuth-Fisher-Yates, modified from http://bost.ocks.org/mike/shuffle/
@@ -115,7 +117,5 @@ var MemoryGame = (function() {
  		}
 	}
 
-	return Ctor;
+	return GameCtor;
 })();
-
-
