@@ -1,7 +1,6 @@
 // This module is completely finished!  You just need to understand how it works, then integrate it.
 
 var MemoryGame = (function() {
-
 	function Ctor(cardset) {
 		var slots, //values of shuffled cards;
 				//sparse array: will have elements deleted as cards are removed
@@ -56,6 +55,7 @@ var MemoryGame = (function() {
 			// must be a face-down card here; proceed...
 			var valHere = valueAt(here),
 				displayHere = cardset.display(valHere);
+				console.log(displayHere);
 			if (there === false) {
 				// no current face-up
 				there = here; //turn here face-up

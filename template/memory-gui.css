@@ -4,3 +4,20 @@
 	/* ... */
 }
 
+td {
+	/* ... */
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+}
+
+.visible {
+	background-color: red;
+	text-align: center;
+}
+
+.matched {
+	background-color: white;
+	border: 0;
+}
