@@ -1,6 +1,57 @@
-/* Whatever CSS you want for GUI...*/
+  body {
+    
+  }
 
-#memorygame {
-	/* ... */
-}
+  #memorygame {
+    width:98%;
+    margin:1%;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
 
+  }
+
+  p {
+    font-size: 1.8em;
+    font-variant: small-caps;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  table {
+    background-color: #43191A;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+
+  }
+
+
+  td {
+  	width: 125px;
+  	height: 125px;
+
+
+  }
+
+  td.matched {
+  	background-color: #202A11;
+
+  }
+
+  img {
+    width: 125px;
+  	height: 125px;
+  }
+
+
+  h1 {
+    width: 200px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  #myBtn {
+    font-variant: small-caps;
+    font-style: bold;
+  }

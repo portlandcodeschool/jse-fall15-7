@@ -1,10 +1,14 @@
 // This module is completely finished!  You just need to understand how it works, then integrate it.
 
+/// Module 2
+
+
 var MemoryGame = (function() {
 
 	function Ctor(cardset) {
 		var slots, //values of shuffled cards;
-				//sparse array: will have elements deleted as cards are removed
+				//sparse array: will have elements deleted as cards
+				// are removed
 			length,//total slots, including gaps
 			there, //position of face-up card if any, or false
 			_gui = null;
@@ -12,15 +16,18 @@ var MemoryGame = (function() {
 		// Helper functions which need access to closure vars;
 		//  some fns will be made public as instance methods:
 		var reset = function() {
+		//  replaces all removed cards, reshuffles entire board,
+		// rebuilds board face-down
 			slots = cardset.values();
 			length = slots.length;
 			there = false;
 			shuffle(slots);
 		}
-		reset();// reset now as part of init'ing
+		reset();
+		//replaces all removed cards, reshuffles entire board, rebuilds board face-down// reset now as part of init'ing
 
-		var gui = function() {//accessor fn
-			if (arguments.length === 0) 
+		var gui = function() { //accessor fn
+			if (arguments.length === 0)
 				return _gui; //getter
 			_gui = arguments[0]; //setter
 		}
@@ -36,19 +43,35 @@ var MemoryGame = (function() {
 			return slots[where];
 		}
 		var removeAt = function(where) {
+			//MATCHED
 			delete slots[where];
 		}
 		var faceupValue = function() {//--> card val
+		//returns the raw value of one face-up card
+		//(if any) otherwise false
 			return valueAt(there);
 		}
 		var faceupWhere = function() {//--> integer
+		//returns the position (a number) of the one
+		//face-up card (if any), otherwise returns false
 			return there;
 		}
 		var remaining = function() {//--> array of integers
+		//remaining returns an array of the positions
+		// of all cards still on the board, including
+		// faceupWhere() if any
 			return Object.keys(slots).map(Number);
 		}
 
 		var lift = function(here) {//--> display string
+		//  lift(where) attempts to lift a card.
+		//if there's a face-down card at position WHERE
+		//	(a single number), return its display value,
+		//by calling cardset.display(val) callback on the
+		//card's raw value, otherwise return false if there's
+		//not currently a face-up card, leave this card face-up.
+		//if there's already a face up card
+
 			if (!isValid(here,length)) return false;
 			if (!remainsAt(here)) return false;
 			if (there===here) return false;
@@ -78,7 +101,7 @@ var MemoryGame = (function() {
 			}
 			if (_gui)
 				_gui.show(here,displayHere);
-			return displayHere; 
+			return displayHere;
 		}
 
 		// Make some functions public as instance methods:
@@ -117,5 +140,3 @@ var MemoryGame = (function() {
 
 	return Ctor;
 })();
-
-

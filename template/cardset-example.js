@@ -1,4 +1,3 @@
-
 // ----Example set 1:----
 
 var FoodCards = (function() {
@@ -36,7 +35,7 @@ var AnimalCards = (function() {
 		this.values = function() {
 			return animals.slice();
 		};
-		this.match = function(pair1,pair2) {  //each pair is [name,num] 
+		this.match = function(pair1,pair2) {  //each pair is [name,num]
 			return (pair1[1]===pair2[1]); // check if num matches
 		};
 		this.display = function(val) { //val is pair [name,num]
