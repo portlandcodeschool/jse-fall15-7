@@ -1,6 +1,33 @@
 /* Whatever CSS you want for GUI...*/
 
 #memorygame {
-	/* ... */
+	width: 90%;
 }
+
+.allCells {
+    height: 4em;
+    width: 4em;
+    margin: .25em;
+    float: left;
+}
+
+.face_down {
+    background-color: blue;
+    color: transparent;
+
+}
+
+.face_up {
+    background-color: red;
+    font-size: 12pt;
+    color: white;
+    text-align: center;
+}
+
+.matched {
+    visibility: hidden;
+
+}
+
+
 
