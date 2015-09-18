@@ -20,7 +20,7 @@ var MemoryGame = (function() {
 		reset();// reset now as part of init'ing
 
 		var gui = function() {//accessor fn
-			if (arguments.length === 0) 
+			if (arguments.length === 0)
 				return _gui; //getter
 			_gui = arguments[0]; //setter
 		}
@@ -49,6 +49,7 @@ var MemoryGame = (function() {
 		}
 
 		var lift = function(here) {//--> display string
+			//console.log(here,there);
 			if (!isValid(here,length)) return false;
 			if (!remainsAt(here)) return false;
 			if (there===here) return false;
@@ -78,7 +79,7 @@ var MemoryGame = (function() {
 			}
 			if (_gui)
 				_gui.show(here,displayHere);
-			return displayHere; 
+			return displayHere;
 		}
 
 		// Make some functions public as instance methods:
