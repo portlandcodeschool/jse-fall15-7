@@ -34,34 +34,15 @@ var MemoryGUI = (function () {
 		}
 
 
-
-
-
-		// var Cell = (function(){
-		// 	function CellCtor(gameSize){
-		// 		this.cell = document.createElement('div');
-		// 		this.attach = container.appendChild(cell);
-		// 		this.id = function(){
-		// 			for(var i = 0; i<gameSize; i++){
-		// 				cell.setAttribute('id', 'cell'+i);
-		// 			}
-		// 		}
-		// 		this.cssClass = cell.classList.add('allCells');
-		// 		this.click = cell.onclick(game.lift());
-
-		// 	}
-		// })();
-
-
-
 		// public instance methods
 		// (you may instead attach these to a prototype if you prefer)
 
 
-		this.reset = function() {
-			container.childNodes.classList.remove('face_up');
-			container.childNodes.classList.add('face_down');
-		}
+		// this.reset = function() {
+		// 	//container.childNodes.classList.remove('face_up');
+		// 	//container.childNodes.classList.add('face_down');
+		// 	game.reset();
+		// }
 		this.show = function(where,displayString) {
 			//console.log(game.faceupValue(where));
 			var whereValId = document.getElementById('cell'+where);
@@ -70,6 +51,15 @@ var MemoryGUI = (function () {
 			return (game.faceupValue(where));
 
 		}
+
+		var resetBtn = document.createElement('button');
+		//resetBtn.setAttribute('id', 'reset');
+		//document.getElementById('reset').onclick = function(){console.log('hello')};
+		resetBtn.innerHTML='RESET';
+		resetBtn.addEventListener('click', game.reset);
+		//try console logging something instead of game.reset
+		container.appendChild(resetBtn);
+
 		this.removeSoon = function(whereArr) {
 			var arrVal1 = whereArr[0];
 			var arrVal2 = whereArr[1];

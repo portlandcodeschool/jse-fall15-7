@@ -15,7 +15,7 @@ var MemoryGame = (function() {
 			slots = cardset.values();
 			length = slots.length;
 			there = false;
-			//shuffle(slots);
+			shuffle(slots);
 		}
 		reset();// reset now as part of init'ing
 
