@@ -1,0 +1,58 @@
+/* Whatever CSS you want for GUI...*/
+
+
+#memorygame {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: 'Indie Flower', cursive;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+.cards {
+	width: 125px;
+	height: 106px;
+	margin: 10px;
+	float: left;
+	border-radius: 15px;
+}
+.faceDown {
+	background-image: url(kitty.jpg);
+	background-size: 125px 106px;
+}
+
+.faceDown:hover {
+	-ms-transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+.faceUp {
+	background: #fb445a;
+	vertical-align: middle;
+	font-size: 1.2em;
+	line-height: 106px;
+}
+
+.removed {
+	background: white;
+}
+
+.resetButton {
+	background: #fb445a;
+	font-size: 1.2em;
+	font-family: 'Indie Flower', cursive;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-top: 10px;
+}
+
+.resetButton:hover {
+	border: 2px solid black;
+}
