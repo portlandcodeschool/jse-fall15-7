@@ -1,0 +1,13 @@
+table tr td {
+    width: 113px;
+    height: 168px;
+    border: 1px solid lightgrey;
+}
+
+.green {
+    background: lightgreen;
+}
+
+.white {
+    background: white;
+}
