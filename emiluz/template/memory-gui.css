@@ -1,0 +1,14 @@
+/* Whatever CSS you want for GUI...*/
+
+img{
+	border-radius: 30px;
+}
+
+h1{
+	text-align: center;
+}
+#memorygame{
+	width: 600px;
+	margin: auto;
+}
+
